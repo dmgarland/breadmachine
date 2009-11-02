@@ -27,6 +27,8 @@ module BreadMachine
 
     autoload :AuthReversalRequest, 'breadmachine/secure_trading/auth_reversal_request'
     autoload :AuthReversalResponse, 'breadmachine/secure_trading/auth_reversal_response'
+    
+    autoload :SubscriptionAuthRequest, 'breadmachine/secure_trading/subscription_auth_request'
 
     extend BreadMachine::SecureTrading::Config::ClassMethods
     
