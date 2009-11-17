@@ -9,7 +9,7 @@ begin
     gem.description = "BreadMachine facilitates payment processing, including 3-D Secure, with the SecureTrading XPay gateway"
     gem.email = "matt@localbubble.com"
     gem.homepage = "http://github.com/mattsoutherden/breadmachine"
-    gem.authors = ["Matt Southerden"]
+    gem.authors = ["Matt Southerden", "Dan Garland"]
     gem.rubyforge_project = "breadmachine"
     
     gem.files = FileList['lib/**/*.rb'].to_a

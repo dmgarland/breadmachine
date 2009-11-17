@@ -8,12 +8,13 @@ Gem::Specification.new do |s|
   s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Matt Southerden"]
-  s.date = %q{2009-10-22}
+  s.authors = ["Matt Southerden", "Dan Garland"]
+  s.date = %q{2009-11-17}
   s.description = %q{BreadMachine facilitates payment processing, including 3-D Secure, with the SecureTrading XPay gateway}
   s.email = %q{matt@localbubble.com}
   s.extra_rdoc_files = [
     "LICENSE",
+     "README",
      "README.rdoc"
   ]
   s.files = [
@@ -40,6 +41,7 @@ Gem::Specification.new do |s|
      "lib/breadmachine/secure_trading/st_3d_auth_response.rb",
      "lib/breadmachine/secure_trading/st_3d_card_query_request.rb",
      "lib/breadmachine/secure_trading/st_3d_card_query_response.rb",
+     "lib/breadmachine/secure_trading/subscription_auth_request.rb",
      "lib/breadmachine/secure_trading/three_d_secure_credentials_xml.rb",
      "lib/breadmachine/secure_trading/xpay.rb",
      "lib/breadmachine/secure_trading/xpay_response.rb",
@@ -52,31 +54,32 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{Make dough with Bread Machine; a ruby library for payment processing.}
   s.test_files = [
-    "spec/blueprints.rb",
-     "spec/breadmachine_spec.rb",
-     "spec/extensions/money_spec.rb",
+    "spec/support/matchers/have_tag.rb",
      "spec/secure_trading/auth_request_spec.rb",
-     "spec/secure_trading/bread_machine_spec.rb",
-     "spec/secure_trading/card_xml_spec.rb",
-     "spec/secure_trading/config_spec.rb",
-     "spec/secure_trading/customer_info_auth_xml_spec.rb",
-     "spec/secure_trading/customer_info_enrolment_xml_spec.rb",
-     "spec/secure_trading/moto_auth_request_spec.rb",
-     "spec/secure_trading/order_info_xml_spec.rb",
-     "spec/secure_trading/st_3d_auth_request_spec.rb",
-     "spec/secure_trading/st_3d_auth_response_spec.rb",
-     "spec/secure_trading/st_3d_card_query_request_spec.rb",
-     "spec/secure_trading/st_3d_card_query_response_spec.rb",
-     "spec/secure_trading/st_auth_reversal_request_spec.rb",
-     "spec/secure_trading/st_refund_request_spec.rb",
-     "spec/secure_trading/st_refund_reversal_request_spec.rb",
-     "spec/secure_trading/st_settlement_request_spec.rb",
-     "spec/secure_trading/three_d_secure_credentials_xml_spec.rb",
      "spec/secure_trading/xpay_response_spec.rb",
+     "spec/secure_trading/customer_info_auth_xml_spec.rb",
+     "spec/secure_trading/st_auth_reversal_request_spec.rb",
+     "spec/secure_trading/st_3d_card_query_request_spec.rb",
      "spec/secure_trading/xpay_socket_spec.rb",
+     "spec/secure_trading/moto_auth_request_spec.rb",
+     "spec/secure_trading/three_d_secure_credentials_xml_spec.rb",
+     "spec/secure_trading/st_refund_reversal_request_spec.rb",
+     "spec/secure_trading/st_3d_auth_response_spec.rb",
+     "spec/secure_trading/customer_info_enrolment_xml_spec.rb",
+     "spec/secure_trading/card_xml_spec.rb",
+     "spec/secure_trading/subscription_auth_spec.rb",
+     "spec/secure_trading/bread_machine_spec.rb",
+     "spec/secure_trading/st_refund_request_spec.rb",
+     "spec/secure_trading/order_info_xml_spec.rb",
+     "spec/secure_trading/st_settlement_request_spec.rb",
+     "spec/secure_trading/st_3d_auth_request_spec.rb",
+     "spec/secure_trading/config_spec.rb",
+     "spec/secure_trading/st_3d_card_query_response_spec.rb",
      "spec/secure_trading/xpay_spec.rb",
+     "spec/breadmachine_spec.rb",
      "spec/spec_helper.rb",
-     "spec/support/matchers/have_tag.rb"
+     "spec/extensions/money_spec.rb",
+     "spec/blueprints.rb"
   ]
 
   if s.respond_to? :specification_version then

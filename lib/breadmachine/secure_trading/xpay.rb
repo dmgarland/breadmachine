@@ -38,7 +38,8 @@ module BreadMachine
       end
       
       def exchange_with_xpay_client(request_xml)
-        XPaySocket.open("localhost", 5000) do |socket|
+        port = BreadMachine::SecureTrading::configuration.xpay_client_port
+        XPaySocket.open("localhost", port) do |socket|
           socket.write request_xml
           socket.read
         end
