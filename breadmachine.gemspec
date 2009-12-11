@@ -5,16 +5,15 @@
 
 Gem::Specification.new do |s|
   s.name = %q{breadmachine}
-  s.version = "0.0.2"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Matt Southerden", "Dan Garland"]
-  s.date = %q{2009-11-17}
+  s.date = %q{2009-12-11}
   s.description = %q{BreadMachine facilitates payment processing, including 3-D Secure, with the SecureTrading XPay gateway}
   s.email = %q{matt@localbubble.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README",
      "README.rdoc"
   ]
   s.files = [
@@ -34,9 +33,11 @@ Gem::Specification.new do |s|
      "lib/breadmachine/secure_trading/config.rb",
      "lib/breadmachine/secure_trading/customer_info_auth_xml.rb",
      "lib/breadmachine/secure_trading/customer_info_enrolment_xml.rb",
+     "lib/breadmachine/secure_trading/fake_gateway/fake_xpay_socket.rb",
      "lib/breadmachine/secure_trading/moto_auth_request.rb",
      "lib/breadmachine/secure_trading/order_info_xml.rb",
      "lib/breadmachine/secure_trading/payment_methods.rb",
+     "lib/breadmachine/secure_trading/request.rb",
      "lib/breadmachine/secure_trading/st_3d_auth_request.rb",
      "lib/breadmachine/secure_trading/st_3d_auth_response.rb",
      "lib/breadmachine/secure_trading/st_3d_card_query_request.rb",
@@ -61,10 +62,12 @@ Gem::Specification.new do |s|
      "spec/secure_trading/st_auth_reversal_request_spec.rb",
      "spec/secure_trading/st_3d_card_query_request_spec.rb",
      "spec/secure_trading/xpay_socket_spec.rb",
+     "spec/secure_trading/fake_gateway/fake_socket_spec.rb",
      "spec/secure_trading/moto_auth_request_spec.rb",
      "spec/secure_trading/three_d_secure_credentials_xml_spec.rb",
      "spec/secure_trading/st_refund_reversal_request_spec.rb",
      "spec/secure_trading/st_3d_auth_response_spec.rb",
+     "spec/secure_trading/request_spec.rb",
      "spec/secure_trading/customer_info_enrolment_xml_spec.rb",
      "spec/secure_trading/card_xml_spec.rb",
      "spec/secure_trading/subscription_auth_spec.rb",

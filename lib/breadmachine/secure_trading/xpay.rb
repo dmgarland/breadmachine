@@ -28,13 +28,8 @@ module BreadMachine
       protected
       
       def generate_xml(request)
-        xml = Builder::XmlMarkup.new(:indent => 2)
-        xml.instruct!
-        xml.RequestBlock('Version' => '3.51') do |request_block|
-          request_block << request.to_xml
-          xml.Certificate BreadMachine::SecureTrading::configuration.site_reference
-        end
-        return xml.to_s
+        request = BreadMachine::SecureTrading::Request.new(request)
+        request.to_xml
       end
       
       def exchange_with_xpay_client(request_xml)
@@ -120,11 +115,11 @@ module BreadMachine
         if response.error?
           message = response.message
           case message.match(/\((\d+)\)/)[1].to_i
-            when 100, 101, 1000, 1100, 3000, 3010, 3330, 3350, 5000:
+            when 100, 101, 1000, 1100, 3000, 3010, 3330, 3350, 5000 then
               raise BreadMachine::GatewayConnectionError.new(message)
-            when 2100, 3100:
+            when 2100, 3100 then
               raise BreadMachine::MerchantConfigurationError.new(message)
-            when 2500, 5100, 10500:
+            when 2500, 5100, 10500 then
               raise BreadMachine::MerchantRequestError.new(message)
           end
         end
