@@ -9,6 +9,8 @@ module BreadMachine
       
       def to_xml
         xml = Builder::XmlMarkup.new(:indent => 2)
+        # TODO: stick the order information in CDATA so that we can have fancy
+        # characters
         xml.Order {
           xml.OrderReference @order_info.order_reference
           xml.OrderInformation @order_info.order_information
